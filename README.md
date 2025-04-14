@@ -1,2 +1,4 @@
 # jr-env
-My environment
+My environment on my Mac
+
+
