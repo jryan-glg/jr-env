@@ -1,0 +1,90 @@
+# Compiled source #
+###################
+*.class
+*.dll
+*.exe
+*.o
+*.so
+.env
+!search/solr-system/airflow-prod/.env
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+# One exception is plugins.zip for data-engineering MWAA.
+# Add lambda-ecs-update-service.zip as exception for gds
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+!plugins.zip
+!lambda-ecs-update-service.zip
+!lambda-vpc-placeholder.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+runme
+test
+.DS_Store
+.DS_Store?
+*.swp
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Often don't want to lock till I'm ready #
+######################
+package-lock.json
+*.sw
+
+# Don't need the cluster-map.json that GitHub action will generate
+cluster-map.json
+
+# Module directory
+**/.terraform
+
+.idea
+*.iml
+
+# Compiled files
+**/*.tfstate
+**/*.tfstate.backup
+**/*.terraform.tfstate*
+**/terraform.tfstate.*
+**/.terraform.lock.hcl
+**/.terraform.tfstate.lock.info
+
+test.log
+
+.build-harness
+build-harness
+temporary.plan
+
+# Local tests/notes files
+.aj
+
+# 'node_modules' folders really should not be checked into this repository
+#   if a lambda is checked into this repo that requires node_modules, it should
+#   be refactored into a separate module repo.
+node_modules
+
+# if this is needed people will have to git add -f this file intentionally
+#   going forward.
+backend.tf
+
+# We store .pub, but should never accidentally commit a .pem
+*.pem
+AGENTS.md
