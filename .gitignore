@@ -54,7 +54,7 @@ package-lock.json
 cluster-map.json
 
 # Module directory
-**/.terraform
+**/.terraform/*
 
 .idea
 *.iml
